@@ -31,9 +31,13 @@ public class QuoteMain {
 		this.litecoinBean = litecoinBean;
 	}
 
-
-
 	public void printMoneyAndParities() {
-		
+		System.out.println("The Parities for the following cryptoCurrencies are: ");
+		System.out.print( bitcoinBean.getName() + " : " );
+		bitcoinBean.printParityInDollars();
+		System.out.print( litecoinBean.getName() + " : " );
+		litecoinBean.printParityInDollars();
+		System.out.print( namecoinBean.getName() + " : " );
+		namecoinBean.printParityInDollars();		
 	}
 }
