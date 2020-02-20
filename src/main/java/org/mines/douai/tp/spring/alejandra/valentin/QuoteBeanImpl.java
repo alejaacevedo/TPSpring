@@ -3,12 +3,23 @@ package org.mines.douai.tp.spring.alejandra.valentin;
 public class QuoteBeanImpl implements QuoteBean {
 	String name;
 	QuoteServiceBean service;
-	
-	public String getName(){
+
+	public QuoteServiceBean getService() {
+		return service;
+	}
+
+	public void setService(QuoteServiceBean service) {
+		this.service = service;
+	}
+
+	public String getName() {
 		return this.name;
 	}
-	
+
 	public void printParityInDollars() {
-	  System.out.println(service.getParityInDollars(name));
+		System.out.println(" La parité de la monnaie " + getName() + " est de : ");
+		System.out.println(service.getParityInDollars(name));
+		System.out.println("hashcode : " + hashCode()); // Prints hashCode for the current Quote Bean
+		System.out.println("--------------");
 	}
 }
