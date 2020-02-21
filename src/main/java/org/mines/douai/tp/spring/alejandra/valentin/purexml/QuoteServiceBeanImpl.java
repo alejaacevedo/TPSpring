@@ -1,7 +1,9 @@
-package org.mines.douai.tp.spring.alejandra.valentin;
+package org.mines.douai.tp.spring.alejandra.valentin.purexml;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+
+import org.mines.douai.tp.spring.alejandra.valentin.QuoteServiceBean;
 
 public class QuoteServiceBeanImpl implements QuoteServiceBean {
 	private HashMap<String,BigDecimal> parity;

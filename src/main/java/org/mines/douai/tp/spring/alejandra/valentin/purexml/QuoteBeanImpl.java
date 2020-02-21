@@ -1,7 +1,12 @@
-package org.mines.douai.tp.spring.alejandra.valentin;
+package org.mines.douai.tp.spring.alejandra.valentin.purexml;
+
+import org.mines.douai.tp.spring.alejandra.valentin.QuoteBean;
+import org.mines.douai.tp.spring.alejandra.valentin.QuoteServiceBean;
 
 public class QuoteBeanImpl implements QuoteBean {
 	String name;
+	
+
 	QuoteServiceBean service;
 
 	public QuoteServiceBean getService() {
@@ -14,6 +19,11 @@ public class QuoteBeanImpl implements QuoteBean {
 
 	public String getName() {
 		return this.name;
+	}
+	
+	// Should setName be necessary??
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public void printParityInDollars() {

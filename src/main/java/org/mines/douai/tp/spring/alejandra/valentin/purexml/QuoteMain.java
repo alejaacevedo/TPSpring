@@ -1,11 +1,18 @@
-package org.mines.douai.tp.spring.alejandra.valentin;
+package org.mines.douai.tp.spring.alejandra.valentin.purexml;
 
+import org.mines.douai.tp.spring.alejandra.valentin.QuoteBean;
 
 public class QuoteMain {
 	
 	QuoteBean bitcoinBean;
 	QuoteBean namecoinBean;
 	QuoteBean litecoinBean;
+	
+	public void initalizeQuoteMain() {
+		this.bitcoinBean.setName("Bitcoin");
+		this.litecoinBean.setName("Litecoin");
+		this.namecoinBean.setName("Namecoin");
+	}
 	
 	public QuoteBean getBitcoinBean() {
 		return bitcoinBean;
@@ -30,6 +37,9 @@ public class QuoteMain {
 	public void setLitecoinBean(QuoteBean litecoinBean) {
 		this.litecoinBean = litecoinBean;
 	}
+	
+	// Methode pour initaliser les noms de cryptomonnaies.
+	
 
 	public void printMoneyAndParities() {
 		bitcoinBean.printParityInDollars();
