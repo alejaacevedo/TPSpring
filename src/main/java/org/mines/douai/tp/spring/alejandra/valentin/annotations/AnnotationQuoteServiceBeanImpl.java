@@ -1,12 +1,16 @@
-package org.mines.douai.tp.spring.alejandra.valentin;
+package org.mines.douai.tp.spring.alejandra.valentin.annotations;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 
-public class QuoteServiceBeanImpl implements QuoteServiceBean {
+import org.mines.douai.tp.spring.alejandra.valentin.QuoteServiceBean;
+import org.springframework.stereotype.Component;
+
+@Component
+public class AnnotationQuoteServiceBeanImpl implements QuoteServiceBean {
 	private HashMap<String,BigDecimal> parity;
 	
-	public QuoteServiceBeanImpl() {
+	public AnnotationQuoteServiceBeanImpl() {
 		this.parity = new HashMap<String, BigDecimal>();
 		this.parity.put("Bitcoin", new BigDecimal("15.34")); //create a bigdecimal that is not a float
 		this.parity.put("Litecoin", new BigDecimal("6.12"));

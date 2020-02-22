@@ -3,12 +3,32 @@
  */
 package org.mines.douai.tp.spring.alejandra.valentin;
 
+import org.mines.douai.tp.spring.alejandra.valentin.purexml.QuoteMain;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class App {
+	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml");
+	QuoteMain mainBean = applicationContext.getBean("quoteMain", QuoteMain.class);
+	
+	
+	public void printMainBeanContent() {
+		this.mainBean.initalizeQuoteMain();
+		for(int i=1; i<10; i++) {
+		this.mainBean.printMoneyAndParities();
+		}
+	}
+	
     public String getGreeting() {
         return "Hello world.";
     }
 
     public static void main(String[] args) {
+    	 App  app1 = new App();
+    
         System.out.println(new App().getGreeting());
+    	app1.printMainBeanContent(); 
+        
+        
     }
 }
