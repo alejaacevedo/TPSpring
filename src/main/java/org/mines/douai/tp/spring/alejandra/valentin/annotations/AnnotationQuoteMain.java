@@ -1,17 +1,20 @@
 package org.mines.douai.tp.spring.alejandra.valentin.annotations;
 
-import org.mines.douai.tp.spring.alejandra.valentin.QuoteBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AnnotationQuoteMain {
 	@Autowired
-	QuoteBean bitcoinBean;
+	//@Qualifier("annotationQuoteBean")
+	AnnotationQuoteBean bitcoinBean;
 	@Autowired
-	QuoteBean namecoinBean;
+	//@Qualifier("annotationQuoteBean")
+	AnnotationQuoteBean namecoinBean;
 	@Autowired
-	QuoteBean litecoinBean;
+	//@Qualifier("annotationQuoteBean")
+	AnnotationQuoteBean litecoinBean;
 
 	public void initalizeQuoteMain() {
 		this.bitcoinBean.setName("Bitcoin");
@@ -19,32 +22,6 @@ public class AnnotationQuoteMain {
 		this.namecoinBean.setName("Namecoin");
 	}
 
-	public QuoteBean getBitcoinBean() {
-		return bitcoinBean;
-	}
-
-	@Autowired
-	public void setBitcoinBean(QuoteBean bitcoinBean) {
-		this.bitcoinBean = bitcoinBean;
-	}
-
-	public QuoteBean getNamecoinBean() {
-		return namecoinBean;
-	}
-
-	@Autowired
-	public void setNamecoinBean(QuoteBean namecoinBean) {
-		this.namecoinBean = namecoinBean;
-	}
-
-	public QuoteBean getLitecoinBean() {
-		return litecoinBean;
-	}
-
-	@Autowired
-	public void setLitecoinBean(QuoteBean litecoinBean) {
-		this.litecoinBean = litecoinBean;
-	}
 
 	// Methode pour initaliser les noms de cryptomonnaies.
 
@@ -53,4 +30,20 @@ public class AnnotationQuoteMain {
 		litecoinBean.printParityInDollars();
 		namecoinBean.printParityInDollars();
 	}
+
+
+	public AnnotationQuoteBean getBitcoinBean() {
+		return bitcoinBean;
+	}
+
+
+	public AnnotationQuoteBean getNamecoinBean() {
+		return namecoinBean;
+	}
+
+
+	public AnnotationQuoteBean getLitecoinBean() {
+		return litecoinBean;
+	}
+
 }

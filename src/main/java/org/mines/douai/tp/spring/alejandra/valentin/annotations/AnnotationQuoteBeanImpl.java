@@ -1,31 +1,24 @@
 package org.mines.douai.tp.spring.alejandra.valentin.annotations;
 
-import org.mines.douai.tp.spring.alejandra.valentin.QuoteBean;
-import org.mines.douai.tp.spring.alejandra.valentin.QuoteServiceBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 @Scope("prototype")
-public class AnnotationQuoteBeanImpl implements QuoteBean {
+public class AnnotationQuoteBeanImpl implements AnnotationQuoteBean {
 	String name;
-	@Autowired
-	QuoteServiceBean service;
+	@Autowired()
+	AnnotationQuoteServiceBean service;
 
-	public QuoteServiceBean getService() {
+	public AnnotationQuoteServiceBean getService() {
 		return service;
-	}
-	@Autowired
-	public void setService(QuoteServiceBean service) {
-		this.service = service;
 	}
 
 	public String getName() {
 		return this.name;
 	}
-	
-	// Should setName be necessary??
+
 	public void setName(String name) {
 		this.name = name;
 	}

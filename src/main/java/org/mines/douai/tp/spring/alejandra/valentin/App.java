@@ -12,26 +12,25 @@ public class App {
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml");
 	QuoteMain mainBean = applicationContext.getBean("quoteMain", QuoteMain.class);
 	
+
 //	ApplicationContext annotationApplicationContext = new ClassPathXmlApplicationContext("applicationAnnotation-context.xml");
 //	AnnotationQuoteMain annotationMainBean = (AnnotationQuoteMain) applicationContext.getBean("AnnotationQuoteMain");
 //	
 	public void printMainBeanContent() {
 		this.mainBean.initalizeQuoteMain();
-		for(int i=1; i<10; i++) {
-		this.mainBean.printMoneyAndParities();
+		for (int i = 1; i < 10; i++) {
+			this.mainBean.printMoneyAndParities();
 		}
 	}
-	
-    public String getGreeting() {
-        return "Hello world.";
-    }
 
-    public static void main(String[] args) {
-    	 App  app1 = new App();
-    
-        System.out.println(new App().getGreeting());
-    	app1.printMainBeanContent(); 
-        
-        
-    }
+	public String getGreeting() {
+		return "Hello world.";
+	}
+
+	public static void main(String[] args) {
+		App app1 = new App();
+		System.out.println(new App().getGreeting());
+		app1.printMainBeanContent();
+
+	}
 }

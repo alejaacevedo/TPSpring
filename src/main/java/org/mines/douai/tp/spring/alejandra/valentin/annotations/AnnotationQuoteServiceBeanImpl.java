@@ -2,12 +2,10 @@ package org.mines.douai.tp.spring.alejandra.valentin.annotations;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
-
-import org.mines.douai.tp.spring.alejandra.valentin.QuoteServiceBean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AnnotationQuoteServiceBeanImpl implements QuoteServiceBean {
+public class AnnotationQuoteServiceBeanImpl implements AnnotationQuoteServiceBean {
 	private HashMap<String,BigDecimal> parity;
 	
 	public AnnotationQuoteServiceBeanImpl() {
