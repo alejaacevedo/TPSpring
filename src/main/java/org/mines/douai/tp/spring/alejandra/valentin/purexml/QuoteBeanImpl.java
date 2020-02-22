@@ -5,8 +5,6 @@ import org.mines.douai.tp.spring.alejandra.valentin.QuoteServiceBean;
 
 public class QuoteBeanImpl implements QuoteBean {
 	String name;
-	
-
 	QuoteServiceBean service;
 
 	public QuoteServiceBean getService() {

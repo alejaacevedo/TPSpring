@@ -2,17 +2,21 @@ package org.mines.douai.tp.spring.alejandra.valentin.annotations;
 
 import org.mines.douai.tp.spring.alejandra.valentin.QuoteBean;
 import org.mines.douai.tp.spring.alejandra.valentin.QuoteServiceBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")
 public class AnnotationQuoteBeanImpl implements QuoteBean {
 	String name;
+	@Autowired
 	QuoteServiceBean service;
 
 	public QuoteServiceBean getService() {
 		return service;
 	}
-
+	@Autowired
 	public void setService(QuoteServiceBean service) {
 		this.service = service;
 	}

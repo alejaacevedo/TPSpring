@@ -3,6 +3,7 @@
  */
 package org.mines.douai.tp.spring.alejandra.valentin;
 
+import org.mines.douai.tp.spring.alejandra.valentin.annotations.AnnotationQuoteMain;
 import org.mines.douai.tp.spring.alejandra.valentin.purexml.QuoteMain;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -11,7 +12,9 @@ public class App {
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml");
 	QuoteMain mainBean = applicationContext.getBean("quoteMain", QuoteMain.class);
 	
-	
+//	ApplicationContext annotationApplicationContext = new ClassPathXmlApplicationContext("applicationAnnotation-context.xml");
+//	AnnotationQuoteMain annotationMainBean = (AnnotationQuoteMain) applicationContext.getBean("AnnotationQuoteMain");
+//	
 	public void printMainBeanContent() {
 		this.mainBean.initalizeQuoteMain();
 		for(int i=1; i<10; i++) {
