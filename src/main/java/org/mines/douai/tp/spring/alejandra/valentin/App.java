@@ -9,28 +9,34 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
+	
+	// XML Config
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml");
 	QuoteMain mainBean = applicationContext.getBean("quoteMain", QuoteMain.class);
 	
-
-//	ApplicationContext annotationApplicationContext = new ClassPathXmlApplicationContext("applicationAnnotation-context.xml");
-//	AnnotationQuoteMain annotationMainBean = (AnnotationQuoteMain) applicationContext.getBean("AnnotationQuoteMain");
-//	
+	// Annotation Config
+	ApplicationContext annotationApplicationContext = new ClassPathXmlApplicationContext("applicationAnnotation-context.xml");
+	AnnotationQuoteMain annotationBean = (AnnotationQuoteMain) annotationApplicationContext.getBean("AnnotationQuoteMain");
+	
 	public void printMainBeanContent() {
 		this.mainBean.initalizeQuoteMain();
-		for (int i = 1; i < 10; i++) {
+		for (int i = 1; i < 4; i++) {
 			this.mainBean.printMoneyAndParities();
 		}
 	}
 
-	public String getGreeting() {
-		return "Hello world.";
+	public void printAnnotationBeanContent() {
+		this.annotationBean.initalizeQuoteMain();
+		for (int i = 1; i < 4; i++) {
+			this.annotationBean.printMoneyAndParities();
+		}
 	}
-
 	public static void main(String[] args) {
 		App app1 = new App();
-		System.out.println(new App().getGreeting());
+		System.out.println("------------------ XML CONFIG ---------------------");
 		app1.printMainBeanContent();
+		System.out.println("------------------ Annotation CONFIG ---------------------");
+		app1.printAnnotationBeanContent();
 
 	}
 }

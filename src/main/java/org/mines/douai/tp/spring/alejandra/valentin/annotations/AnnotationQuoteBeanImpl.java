@@ -1,10 +1,11 @@
 package org.mines.douai.tp.spring.alejandra.valentin.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("AnnotationQuoteBeanImpl")
 @Scope("prototype")
 public class AnnotationQuoteBeanImpl implements AnnotationQuoteBean {
 	String name;
@@ -27,6 +28,7 @@ public class AnnotationQuoteBeanImpl implements AnnotationQuoteBean {
 		System.out.println(" La parité de la monnaie " + getName() + " est de : ");
 		System.out.println(service.getParityInDollars(name));
 		System.out.println("hashcode : " + hashCode()); // Prints hashCode for the current Quote Bean
+		System.out.println("Service hashcode : " + service.hashCode()); // Prints hashCode for the current QuoteService Bean
 		System.out.println("--------------");
 	}
 }

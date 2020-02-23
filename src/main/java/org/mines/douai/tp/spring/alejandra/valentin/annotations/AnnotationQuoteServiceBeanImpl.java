@@ -2,9 +2,12 @@ package org.mines.douai.tp.spring.alejandra.valentin.annotations;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("singleton")
 public class AnnotationQuoteServiceBeanImpl implements AnnotationQuoteServiceBean {
 	private HashMap<String,BigDecimal> parity;
 	

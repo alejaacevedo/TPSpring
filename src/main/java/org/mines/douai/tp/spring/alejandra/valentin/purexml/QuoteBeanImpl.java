@@ -28,6 +28,7 @@ public class QuoteBeanImpl implements QuoteBean {
 		System.out.println(" La parité de la monnaie " + getName() + " est de : ");
 		System.out.println(service.getParityInDollars(name));
 		System.out.println("hashcode : " + hashCode()); // Prints hashCode for the current Quote Bean
+		System.out.println("Service hashCode : " + service.hashCode());
 		System.out.println("--------------");
 	}
 }
